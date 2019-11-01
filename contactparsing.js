@@ -15,13 +15,15 @@ function getIndex() {
 }
 
 function showContact() {
-	for (i = 0; i < contacts.length; i++)
-	console.log(contacts[i]);
-	var ofIndexLoad = new XMLHttpRequest();
-    ofIndexLoad.open("GET", contacts[i]);
-    ofIndexLoad.onload = function() {
-    	console.log(ofIndexLoad.responseText)
-    	contactOfContacts = JSON.parse(ofIndexLoad.responseText);
-    }
-    ofIndexLoad.send()
+	for (i = 0; i < contacts.length; i++) {
+		console.log(contacts[i]);
+		var ofIndexLoad = new XMLHttpRequest();
+    	ofIndexLoad.open("GET", contacts[i]);
+
+    	ofIndexLoad.onload = function() {
+    		console.log(ofIndexLoad.responseText)
+    		contactOfContacts = JSON.parse(ofIndexLoad.responseText);
+		}
+    	ofIndexLoad.send();
+	}
 }
